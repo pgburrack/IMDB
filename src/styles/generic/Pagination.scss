@@ -1,0 +1,53 @@
+$green: #36B993;
+@import './../vendor/settings';
+
+.pagination {
+  & > li {
+
+    &:focus {
+      outline: none;
+    }
+
+    &.disabled {
+
+      & > a {
+        color: #aeaeae;
+        background-color: $light-gray;
+
+        &:hover:not(.active) {
+          color: #aeaeae;
+          background-color: $light-gray;
+        }
+      }
+
+    }
+    & > a {
+      color: #656f7c;
+      font-size: 1.6rem;
+      padding: 8px 16px;
+      cursor: pointer;
+      transition: background-color .3s;
+      background-color: $light-gray;
+      &.active {
+        color: $green;
+        font-weight: bold;
+      }
+
+      &:focus {
+        color: #91a4bb;
+        background-color: #fff;
+        border-color: #ddd;
+      }
+
+      &:hover:not(.active) {
+        background-color: #ddd;
+        color: $green;
+      }
+    }
+  }
+
+  & > li.first a, & > li.last a{
+   color: $green;
+  }
+}
+

@@ -1,0 +1,694 @@
+@import 'vendor/_normalize';
+@import 'vendor/settings';
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
+
+:global {
+  html {
+    height: 100%;
+    font-size: 10px;
+  }
+  body {
+    color: #565656;
+    background-color: #f1f3f4;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    padding: 0px;
+    margin: 0px;
+    min-height: 100%;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  a:link,
+  a:visited {
+    text-decoration: none;
+    outline: none;
+    color: #2e2e32;
+  }
+  a:hover,
+  a:active {
+    outline: none;
+    text-decoration: none;
+    color: #999999;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    color: #424856;
+    /*margin: 0;*/
+  }
+  /* h1,
+  .h1 {
+    font-size: 1.375em;
+  }
+  h2,
+  .h2 {
+    font-size: 1.188em;
+  }
+  h3,
+  .h3 {
+    font-size: 1.063em;
+  }
+  h4,
+  .h4 {
+    font-size: 0.938em;
+  }
+  h5,
+  .h5 {
+    font-size: 0.813em;
+  }
+  h6,
+  .h6 {
+    font-size: 0.75em;
+  } */
+  p {
+    font-size: 0.875em;
+  }
+  hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  img {
+    max-width: 100%;
+  }
+  ::selection {
+    background: #fff7dd;
+  }
+  ::-moz-selection {
+    background: #fff7dd;
+  }
+
+   @media (min-width: 768px) {
+      .container {
+          padding: 0px;
+          width: 100%;
+      }
+     .navbar {
+        border-radius: 0px !important;
+     }
+     .movie-poster {
+         height: 600px;
+      }
+  }
+  @media (min-width: 992px) {
+      .container {
+          padding: 0px;
+          width: 100%;
+      }
+      .movie-poster {
+         height: 350px;
+      }
+  }
+  @media (min-width: 1200px) {
+      .container {
+          padding: 0px;
+          width: 100%;
+      }
+      .movie-poster {
+         height: 415px;
+      }
+  }
+
+  .clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+
+  .overflow-hidden {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .flex-right {
+    display: flex;
+    flex-direction: row;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+
+  .inner-view {
+    max-width: 90%;
+  }
+
+  .btn-edit {
+      padding: 4px 10px;
+      background-color: #333;
+      color: #ddd;
+      border-radius: 0px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.8rem;
+      outline: none;
+      border: none;
+  }
+
+  .btn-edit:hover, .btn-edit:focus {
+      color: #fff;
+      background-color: #888;
+      outline: none;
+  }
+
+  .push-top {
+    margin-top: 15px;
+  }
+
+  .display-table {
+    display: table;
+  }
+
+  .display-table-row {
+    display: table-row;
+  }
+
+  .display-table-cell {
+    display: block;
+    margin-left: 18px;
+  }
+
+  .row {
+    padding: 7px 0px !important;
+  }
+
+  .table-fixed {
+    table-layout: fixed;
+  }
+  .word-wrap {
+    word-wrap: break-word;
+  }
+  /* Auto suggest - start */
+  .react-autosuggest__container {
+    position: relative;
+  }
+
+  .react-autosuggest__input {
+    width: 240px;
+    height: 30px;
+    padding: 10px 20px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+
+  .react-autosuggest__input:focus {
+    outline: none;
+  }
+
+  .react-autosuggest__container--open .react-autosuggest__input {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .react-autosuggest__suggestions-container {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 1px solid #aaa;
+    background-color: #fff;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 2;
+  }
+
+  .react-autosuggest__suggestion {
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+
+  .react-autosuggest__suggestion--focused {
+    background-color: #ddd;
+  }
+
+  /* Auto suggest - end */
+
+  /* DayPicker - start */
+  .RangeDayPicker {
+      visibility: hidden;
+      outline: none;
+      background-color: #fff;
+      position: absolute;
+      top: 33px;
+      left: -250px;
+      border: 1px solid #ECECEC;
+      -webkit-box-shadow: 3px 3px 0px 1px rgba(238,238,239,0.7);
+      -moz-box-shadow: 3px 3px 0px 1px rgba(238,238,239,0.7);
+      box-shadow: 3px 3px 0px 1px rgba(238,238,239,0.7);
+       -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+      -ms-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
+  }
+  .RangeDayPicker.open {
+    visibility: visible;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    z-index: 100;
+  }
+  .DayPicker {
+    outlin: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+        padding: 0 0 1rem 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+
+  .DayPicker:focus {
+    outline: none;
+  }
+
+  .DayPicker-Month {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin: 0 0.5rem;
+  }
+
+    .DayPicker-NavBar {
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: 0 .5rem;
+    }
+
+    .DayPicker-NavButton {
+      position: absolute;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+      .DayPicker-NavButton--prev {
+        left: 1rem;
+        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2cHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDI2IDUwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjIgKDEyMDQzKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5wcmV2PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9InByZXYiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzLjM5MzE5MywgMjUuMDAwMDAwKSBzY2FsZSgtMSwgMSkgdHJhbnNsYXRlKC0xMy4zOTMxOTMsIC0yNS4wMDAwMDApIHRyYW5zbGF0ZSgwLjg5MzE5MywgMC4wMDAwMDApIiBmaWxsPSIjNTY1QTVDIj4KICAgICAgICAgICAgPHBhdGggZD0iTTAsNDkuMTIzNzMzMSBMMCw0NS4zNjc0MzQ1IEwyMC4xMzE4NDU5LDI0LjcyMzA2MTIgTDAsNC4yMzEzODMxNCBMMCwwLjQ3NTA4NDQ1OSBMMjUsMjQuNzIzMDYxMiBMMCw0OS4xMjM3MzMxIEwwLDQ5LjEyMzczMzEgWiIgaWQ9InJpZ2h0IiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K");
+        width: 8px;
+        background-size: contain;
+      }
+
+      .DayPicker-NavButton--next {
+        right: 1rem;
+        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjI2cHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDI2IDUwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjIgKDEyMDQzKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5uZXh0PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGcgaWQ9Im5leHQiIHNrZXRjaDp0eXBlPSJNU0xheWVyR3JvdXAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuOTUxNDUxLCAwLjAwMDAwMCkiIGZpbGw9IiM1NjVBNUMiPgogICAgICAgICAgICA8cGF0aCBkPSJNMCw0OS4xMjM3MzMxIEwwLDQ1LjM2NzQzNDUgTDIwLjEzMTg0NTksMjQuNzIzMDYxMiBMMCw0LjIzMTM4MzE0IEwwLDAuNDc1MDg0NDU5IEwyNSwyNC43MjMwNjEyIEwwLDQ5LjEyMzczMzEgTDAsNDkuMTIzNzMzMSBaIiBpZD0icmlnaHQiIHNrZXRjaDp0eXBlPSJNU1NoYXBlR3JvdXAiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=");
+        width: 8px;
+        background-size: contain;
+      }
+
+
+    .DayPicker-Caption {
+      display: table-caption;
+      height: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    .DayPicker-Weekdays {
+      display: table-header-group;
+    }
+
+      .DayPicker-WeekdaysRow {
+        display: table-row;
+      }
+
+        .DayPicker-Weekday {
+          display: table-cell;
+          padding: .2rem;
+          font-size: .875em;
+          text-align: center;
+          color: #8b9898;
+        }
+
+    .DayPicker-Body {
+      display: table-row-group;
+    }
+
+      .DayPicker-Week {
+        display: table-row;
+      }
+
+        .DayPicker-Day {
+          display: table-cell;
+          padding: .2rem;
+          border: 1px solid #eaecec;
+          text-align: center;
+          cursor: pointer;
+          vertical-align: middle;
+          font-size: 0.7rem;
+          font-weight: 600;
+        }
+
+    .DayPicker--interactionDisabled .DayPicker-Day {
+      cursor: default;
+    }
+
+  /* Default modifiers */
+
+  .DayPicker-Day--today {
+    font-weight: 500;
+    background-color: #000;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .DayPicker-Day--disabled {
+    color: #dce0e0;
+    cursor: default;
+    background-color: #eff1f1;
+  }
+
+  .DayPicker-Day--outside {
+    cursor: default;
+    color: #dce0e0;
+  }
+
+  /* Example modifiers */
+
+  .DayPicker-Day--sunday {
+    color: #dce0e0;
+    background-color: #f7f8f8;
+  }
+
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    color: #FFF;
+    background-color: #9ba2ab;
+    outline: none;
+  }
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):focus {
+    outline: none;
+  }
+
+  .headerTitle {
+      text-align: center;
+      margin-top: 0.4rem;
+      margin-bottom: 0rem;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+  }
+
+  .dateHeader {
+      font-size: 0.7rem;
+      text-align: center;
+      margin-top: 0.3rem;
+  }
+  .toDateLabel {
+    margin-left: 0.4rem;
+  }
+  .fromDateLabel, .toDateLabel {
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-right: 0.4rem;
+      display: inline-block;
+  }
+  .applyBtn, .resetBtn {
+      border: 0px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  }
+  .resetBtn {
+      margin-left: 0.8rem !important;
+      background-color: #fff;
+      border: 1px solid #D8D8D8;
+  }
+  .applyBtn {
+      color: #fff;
+      background-color: #181A1C;
+      margin-left: 0.7rem;
+  }
+
+
+  /* Locales */
+
+  .DayPicker--ar {
+    direction: rtl;
+  }
+
+  /* DayPicker - end */
+
+  .vertical-align {
+    display: flex;
+    align-items: center;
+  }
+
+  .center-table {
+    display: table;
+    margin: 0 auto;
+  }
+
+
+  /*  Bootstrap Clearfix */
+
+@media (max-width: 766px) {
+  .col-sm-2:nth-child(2n+1) {
+    clear: left;
+  }
+  .dropdown {
+
+    .dropdown-title {
+      display: none;
+    }
+  }
+
+  .navbar-header {
+    float: left;
+  }
+  .navbar-collapse.collapse {
+    display: block!important;
+    height: auto!important;
+    padding-bottom: 0;
+    overflow: visible!important;
+  }
+
+  .navbar-right {
+    float: right!important;
+    margin: 0;
+  }
+
+  .nav>li {
+    position: static;
+  }
+
+  .navbar-nav>li>.dropdown-menu {
+    width: 100%;
+    top: 100%;
+    border: none;
+  }
+}
+
+/*  Tablet  */
+@media (min-width:767px){
+
+  /* Column clear fix */
+  .col-lg-1:nth-child(12n+1),
+  .col-lg-2:nth-child(6n+1),
+  .col-lg-3:nth-child(4n+1),
+  .col-lg-4:nth-child(3n+1),
+  .col-lg-6:nth-child(2n+1),
+  .col-md-1:nth-child(12n+1),
+  .col-md-2:nth-child(6n+1),
+  .col-md-3:nth-child(4n+1),
+  .col-md-4:nth-child(3n+1),
+  .col-md-6:nth-child(2n+1){
+    clear: none;
+  }
+  .col-sm-1:nth-child(12n+1),
+  .col-sm-2:nth-child(6n+1),
+  .col-sm-3:nth-child(4n+1),
+  .col-sm-4:nth-child(3n+1),
+  .col-sm-6:nth-child(2n+1) {
+    clear: left;
+  }
+
+  // .navbar-toggle {
+  //   display: block;
+  // }
+  .navbar-nav>li>a {
+    padding-top: 14px;
+  }
+
+  .nav>li {
+    position: static;
+  }
+  .dropdown {
+    .dropdown-title {
+      display: none;
+    }
+  }
+
+  .navbar-nav>li>.dropdown-menu {
+    width: 100%;
+    top: 100%;
+    border: none;
+  }
+
+}
+
+
+/*  Medium Desktop  */
+@media (min-width:992px){
+
+  /* Column clear fix */
+  .col-lg-1:nth-child(12n+1),
+  .col-lg-2:nth-child(6n+1),
+  .col-lg-3:nth-child(4n+1),
+  .col-lg-4:nth-child(3n+1),
+  .col-lg-6:nth-child(2n+1),
+  .col-sm-1:nth-child(12n+1),
+  .col-sm-2:nth-child(6n+1),
+  .col-sm-3:nth-child(4n+1),
+  .col-sm-4:nth-child(3n+1),
+  .col-sm-6:nth-child(2n+1){
+    clear: none;
+  }
+  .col-md-1:nth-child(12n+1),
+  .col-md-2:nth-child(6n+1),
+  .col-md-3:nth-child(4n+1),
+  .col-md-4:nth-child(3n+1),
+  .col-md-6:nth-child(2n+1){
+    clear: left;
+  }
+}
+
+
+/*  Large Desktop  */
+@media (min-width:1200px){
+  /* Column clear fix */
+  .col-md-1:nth-child(12n+1),
+  .col-md-2:nth-child(6n+1),
+  .col-md-3:nth-child(4n+1),
+  .col-md-4:nth-child(3n+1),
+  .col-md-6:nth-child(2n+1),
+  .col-sm-1:nth-child(12n+1),
+  .col-sm-2:nth-child(6n+1),
+  .col-sm-3:nth-child(4n+1),
+  .col-sm-4:nth-child(3n+1),
+  .col-sm-6:nth-child(2n+1){
+    clear: none;
+  }
+  .col-lg-1:nth-child(12n+1),
+  .col-lg-2:nth-child(6n+1),
+  .col-lg-3:nth-child(4n+1),
+  .col-lg-4:nth-child(3n+1),
+  .col-lg-6:nth-child(2n+1){
+    clear: left;
+  }
+
+  .dropdown {
+    .dropdown-title {
+      display: block;
+    }
+    .burger {
+      display: none;
+    }
+  }
+
+  .nav>li {
+    position: relative;
+  }
+
+  .navbar-nav>li>.dropdown-menu {
+    width: 100%;
+    top: 98%;
+  }
+}
+
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+  color: #474e5a;
+  background-color: #fff;
+}
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+  color: #fff;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.my-account-style {
+  & > a {
+    color: #fff !important;
+    font-size: 1.6rem;
+    padding: 13px 18px;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+}
+
+  .dropdown-menu {
+    top:98%;
+    border-top:none;
+    background-color: $dark-gray;
+    &.open {
+      display: block;
+    }
+    &>li>a {
+      color: #fff;
+
+      &:focus, &:hover {
+        background-color: transparent;
+      }
+    }
+
+  }
+
+  .burger {
+    display: block;
+    padding: 12px 0px;
+  }
+  .collapse {
+    display: block;
+  }
+
+
+}

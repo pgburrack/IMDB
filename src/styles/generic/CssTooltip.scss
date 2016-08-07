@@ -1,0 +1,59 @@
+div.tooltips {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  &:hover {
+    img, svg {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    z-index: 2;
+  }
+
+  & > div {
+    height: 100%;
+  }
+}
+div.tooltips span {
+  font-size: 1.5rem;
+  position: absolute;
+  width: 0;
+  color: #FFF;
+  background: #4c5264;
+  text-align: center;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  overflow: hidden;
+  border-radius: 5px;
+  word-wrap: break-word;
+
+  top: 110%;
+  opacity: 0;
+  transition: opacity, top 0.3s ease-in-out;
+}
+div.tooltips span:after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 50%;
+  margin-right: -8px;
+  width: 0; height: 0;
+  border-bottom: 8px solid #4c5264;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+div:hover.tooltips span {
+  visibility: visible;
+  left: 11%;
+  top: 100%;
+  margin-top: 15px;
+  z-index: 9999;
+  height: auto;
+  line-height: 30px;
+  width: 80%;
+  padding: 10px;
+  overflow: visible;
+  opacity: 1;
+}

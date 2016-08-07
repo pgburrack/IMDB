@@ -1,0 +1,110 @@
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  max-width: none;
+}
+
+input.cmn-toggle-round-flat + label {
+  padding: 2px;
+  width: 80px;
+  height: 25px;
+  margin: 0;
+  border: 2px solid #dddddd;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:before, input.cmn-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+input.cmn-toggle-round-flat + label:before {
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #fff;
+  border: 0px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-transition: background 0.4s;
+  -moz-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+input.cmn-toggle-round-flat + label:after {
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 40px;
+  background-color: #dddddd;
+  border-top-radius-right: 6px;
+  border-bottom-radius-right: 6px;
+  -webkit-transition: margin 0.4s, background 0.4s;
+  -moz-transition: margin 0.4s, background 0.4s;
+  -o-transition: margin 0.4s, background 0.4s;
+  transition: margin 0.4s, background 0.4s;
+}
+input.cmn-toggle-round-flat:checked + label, input.cmn-toggle-round-flat + label {
+    border: 2px solid #B1AFAF;
+}
+
+input.cmn-toggle-round-flat:checked + label:after {
+  margin-left: 36px;
+  background-color: #dddddd;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.onBtn {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 3px 9px 3px 8px;
+    background-color: #428bca;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    color: #fff;
+    line-height: 15px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.offBtn {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 3px 8px 3px 8px;
+    background-color: red;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    color: #fff;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 0.938rem;
+}
+

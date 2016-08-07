@@ -1,0 +1,110 @@
+
+.modal {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    align-items: center;
+    display: none;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1986;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    color: #69707a;
+    line-height: 1.42857;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+}
+.modal.is-active {
+    display: flex;
+}
+.modal-content {
+    margin: 0 20px;
+    max-height: 90vh;
+    overflow: auto;
+    position: relative;
+    width: 950px;
+    color: #69707a;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    outline: 0;
+    border: 1px solid rgba(0,0,0,.2);
+}
+.modal-background {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.86);
+}
+.modal-close:hover {
+    background: #ed6c63;
+}
+
+.modal-close {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    border-radius: 290486px;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    vertical-align: top;
+    width: 30px;
+    overflow: visible;
+    border: none;
+    border-radius: 290486px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    outline: none;
+}
+.modal-close:before {
+    transform: rotate(45deg);
+    box-sizing: inherit;
+}
+.modal-close:after {
+    transform: rotate(-45deg);
+    box-sizing: inherit;
+}
+.modal-close:before, .modal-close:after {
+    background: white;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    margin-left: -25%;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    box-sizing: inherit;
+}
+.modal-close:focus {
+  outline: none;
+}
